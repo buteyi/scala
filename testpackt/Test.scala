@@ -1,4 +1,4 @@
-import testpackt.Animal
+package testpackt
 
 /**
   * Created by john on 17/7/21.
@@ -63,71 +63,4 @@ object Test {
   def f(s: String) = "1" + s + "1"
 
   def g(s: String) = "2" + s + "2"
-}
-class Myclass{
-  private var value = 0
-  def increment() = {value += 1 }
-  def cuttent = value
-}
-
-
-
-class Person {
-  println("hello")
-  private var name = ""
-  private var age = 0
-
-  def this(name: String){
-    this()
-    this.name = name
-  }
-
-  def this(name: String, age: Int){
-    this(name)
-    this.age = age
-  }
-
-  override def toString: String = "Person[" + "name: " + name + " age: " + age + " ]"
-
-}
-
-object Accounts {
-  private var lastNumber = 0
-  var s = Map(1 -> "e")
-
-  def newUniqueNumber() = { lastNumber += 1; lastNumber}
-}
-
-abstract class A {
-  val id: Int
-  var name:String
-
-  override def toString: String = name + id
-
-}
-
-class B(val id: Int) extends A {
-  var name:String = "bill"
-}
-
-class C(id: Int) extends B(id :Int) with Something{
-  println("hhhhhhh")
-
-  def printC() = println(name)
-}
-
-trait Something {
-
-  val name2  = "john"
-
-  println("in Something : " + name2)
-}
-
-object Number {
-  def unapply(arg: String ): Option[Int] =
-    try {
-      Some (Integer.parseInt(arg.trim))
-    } catch {
-      case ex : NumberFormatException => None
-    }
 }
